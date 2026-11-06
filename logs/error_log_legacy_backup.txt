@@ -1,0 +1,119 @@
+[2026-11-01 07:27:30] [INFO] =================================================================
+[2026-11-01 07:27:30] [INFO] Starting DIT-P04 Stock and Transactions Automation Pipeline
+[2026-11-01 07:27:30] [INFO] Target: /tmp/StockPulse_AI_Mentor_Edition/input/Input_Data.xlsx
+[2026-11-01 07:27:30] [UNKNOWN_CODE] ID 'PRD-9999': Unknown Product Code 'PRD-9999' (Not found in Product Master)
+[2026-11-01 07:27:30] [INVALID_TRANSACTION] ID 'PRD-1002': Invalid transaction quantity (-10.0): Must be positive (>0)
+[2026-11-01 07:27:30] [NEGATIVE_STOCK] ID 'PRD-1005': Overdrawn stock balance: -5.0
+[2026-11-01 07:27:30] [INFO] Summary: 15 Monitored SKUs | 11 Reorders | 1 Unknown Codes | 1 Negative Stock Alerts
+[2026-11-01 07:38:33] [INFO] =================================================================
+[2026-11-01 07:38:33] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-01 07:38:33] [INFO] Target: /tmp/StockPulse_AI_Universal/input/Input_Data.xlsx
+[2026-11-01 07:38:33] [INFO] Master Sheet Selected: 'Product_Master'
+[2026-11-01 07:38:33] [INFO] Transactions Sheet Selected: 'Stock_Transactions'
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1001': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1001': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1002': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1003': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1004': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1004': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1005': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1006': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1006': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1007': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1008': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1009': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1010': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1010': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1011': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1012': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1013': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1013': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1014': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1015': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [UNKNOWN_CODE] ID 'PRD-9999': Unknown Product Code 'PRD-9999' (Not in Master Catalog)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1005': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1002': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INFO] Ingestion Finished: 15 Master SKUs | 0 Transactions | 10 Reorders
+[2026-11-01 07:38:33] [INFO] =================================================================
+[2026-11-01 07:38:33] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-01 07:38:33] [INFO] Target: /working_dir/c_c55e88873a66557d/artifacts/file_generation/ttl=63d/output/Upload_Sample_Batch1_Industrial.xlsx
+[2026-11-01 07:38:33] [INFO] Master Sheet Selected: 'Industrial_Components'
+[2026-11-01 07:38:33] [INFO] Operating in Single-Sheet Master Inventory Mode
+[2026-11-01 07:38:33] [INFO] Ingestion Finished: 10 Master SKUs | 0 Transactions | 7 Reorders
+[2026-11-01 07:38:33] [INFO] =================================================================
+[2026-11-01 07:38:33] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-01 07:38:33] [INFO] Target: /working_dir/c_c55e88873a66557d/artifacts/file_generation/ttl=63d/output/Upload_Sample_Batch2_Automotive.xlsx
+[2026-11-01 07:38:33] [INFO] Master Sheet Selected: 'Automotive_Assembly'
+[2026-11-01 07:38:33] [INFO] Operating in Single-Sheet Master Inventory Mode
+[2026-11-01 07:38:33] [INFO] Ingestion Finished: 10 Master SKUs | 0 Transactions | 8 Reorders
+[2026-11-01 07:38:33] [INFO] =================================================================
+[2026-11-01 07:38:33] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-01 07:38:33] [INFO] Target: /working_dir/c_c55e88873a66557d/artifacts/file_generation/ttl=63d/output/Upload_Sample_Custom_Vendor_Catalog.xlsx
+[2026-11-01 07:38:33] [INFO] Master Sheet Selected: 'Supplier_Stock_Feed'
+[2026-11-01 07:38:33] [INFO] Operating in Single-Sheet Master Inventory Mode
+[2026-11-01 07:38:33] [INFO] Ingestion Finished: 5 Master SKUs | 0 Transactions | 4 Reorders
+[2026-11-01 07:38:33] [INFO] =================================================================
+[2026-11-01 07:38:33] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-01 07:38:33] [INFO] Target: /tmp/StockPulse_AI_Universal/input/Input_Data.xlsx
+[2026-11-01 07:38:33] [INFO] Master Sheet Selected: 'Product_Master'
+[2026-11-01 07:38:33] [INFO] Transactions Sheet Selected: 'Stock_Transactions'
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1001': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1001': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1002': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1003': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1004': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1004': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1005': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1006': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1006': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1007': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1008': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1009': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1010': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1010': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1011': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1012': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1013': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1013': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1014': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1015': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [UNKNOWN_CODE] ID 'PRD-9999': Unknown Product Code 'PRD-9999' (Not in Master Catalog)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1005': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INVALID_TRANSACTION] ID 'PRD-1002': Invalid Quantity (0.0): Must be positive (>0)
+[2026-11-01 07:38:33] [INFO] Ingestion Finished: 15 Master SKUs | 0 Transactions | 10 Reorders
+[2026-11-01 07:39:22] [INFO] =================================================================
+[2026-11-01 07:39:22] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-01 07:39:22] [INFO] Target: /tmp/StockPulse_AI_Universal/input/Input_Data.xlsx
+[2026-11-01 07:39:22] [INFO] Master Sheet Selected: 'Product_Master'
+[2026-11-01 07:39:22] [INFO] Transactions Sheet Selected: 'Stock_Transactions'
+[2026-11-01 07:39:22] [UNKNOWN_CODE] ID 'PRD-9999': Unknown Product Code 'PRD-9999' (Not in Master Catalog)
+[2026-11-01 07:39:22] [INVALID_TRANSACTION] ID 'PRD-1002': Invalid Quantity (-10.0): Must be positive (>0)
+[2026-11-01 07:39:22] [NEGATIVE_STOCK] ID 'PRD-1005': Overdrawn balance: -5.0
+[2026-11-01 07:39:22] [INFO] Ingestion Finished: 15 Master SKUs | 21 Transactions | 11 Reorders
+[2026-11-01 07:39:22] [INFO] =================================================================
+[2026-11-01 07:39:22] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-01 07:39:22] [INFO] Target: /working_dir/c_c55e88873a66557d/artifacts/file_generation/ttl=63d/output/Upload_Sample_Batch1_Industrial.xlsx
+[2026-11-01 07:39:22] [INFO] Master Sheet Selected: 'Industrial_Components'
+[2026-11-01 07:39:22] [INFO] Operating in Single-Sheet Master Inventory Mode
+[2026-11-01 07:39:22] [INFO] Ingestion Finished: 10 Master SKUs | 0 Transactions | 7 Reorders
+[2026-11-01 07:39:22] [INFO] =================================================================
+[2026-11-01 07:39:22] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-01 07:39:22] [INFO] Target: /working_dir/c_c55e88873a66557d/artifacts/file_generation/ttl=63d/output/Upload_Sample_Batch2_Automotive.xlsx
+[2026-11-01 07:39:22] [INFO] Master Sheet Selected: 'Automotive_Assembly'
+[2026-11-01 07:39:22] [INFO] Operating in Single-Sheet Master Inventory Mode
+[2026-11-01 07:39:22] [INFO] Ingestion Finished: 10 Master SKUs | 0 Transactions | 8 Reorders
+[2026-11-01 07:39:22] [INFO] =================================================================
+[2026-11-01 07:39:22] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-01 07:39:22] [INFO] Target: /working_dir/c_c55e88873a66557d/artifacts/file_generation/ttl=63d/output/Upload_Sample_Custom_Vendor_Catalog.xlsx
+[2026-11-01 07:39:22] [INFO] Master Sheet Selected: 'Supplier_Stock_Feed'
+[2026-11-01 07:39:22] [INFO] Operating in Single-Sheet Master Inventory Mode
+[2026-11-01 07:39:23] [INFO] Ingestion Finished: 5 Master SKUs | 0 Transactions | 4 Reorders
+[2026-11-01 07:39:23] [INFO] =================================================================
+[2026-11-01 07:39:23] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-01 07:39:23] [INFO] Target: /tmp/StockPulse_AI_Universal/input/Input_Data.xlsx
+[2026-11-01 07:39:23] [INFO] Master Sheet Selected: 'Product_Master'
+[2026-11-01 07:39:23] [INFO] Transactions Sheet Selected: 'Stock_Transactions'
+[2026-11-01 07:39:23] [UNKNOWN_CODE] ID 'PRD-9999': Unknown Product Code 'PRD-9999' (Not in Master Catalog)
+[2026-11-01 07:39:23] [INVALID_TRANSACTION] ID 'PRD-1002': Invalid Quantity (-10.0): Must be positive (>0)
+[2026-11-01 07:39:23] [NEGATIVE_STOCK] ID 'PRD-1005': Overdrawn balance: -5.0
+[2026-11-01 07:39:23] [INFO] Ingestion Finished: 15 Master SKUs | 21 Transactions | 11 Reorders

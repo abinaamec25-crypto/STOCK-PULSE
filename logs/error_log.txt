@@ -1,0 +1,63 @@
+[2026-11-06 11:15:54] [INFO] =================================================================
+[2026-11-06 11:15:54] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-06 11:15:54] [INFO] Target: /working_dir/c_cff08974ec734e22/StockPulse_AI/input/Input_Data.xlsx
+[2026-11-06 11:15:54] [INFO] Master Sheet Selected: 'Product_Master'
+[2026-11-06 11:15:54] [INFO] Transactions Sheet Selected: 'Stock_Transactions'
+[2026-11-06 11:15:54] [UNKNOWN_CODE] ID 'PRD-9999': Unknown Product Code 'PRD-9999' (Not in Master Catalog)
+[2026-11-06 11:15:54] [INVALID_TRANSACTION] ID 'PRD-1002': Invalid Quantity (-10.0): Must be positive (>0)
+[2026-11-06 11:15:54] [NEGATIVE_STOCK] ID 'PRD-1005': Overdrawn balance: -5.0
+[2026-11-06 11:15:54] [INFO] Ingestion Finished: 15 Master SKUs | 21 Transactions | 11 Reorders
+[2026-11-06 11:24:00] [INFO] =================================================================
+[2026-11-06 11:24:00] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-06 11:24:00] [INFO] Target: /working_dir/c_cff08974ec734e22/StockPulse_AI/input/Input_Data.xlsx
+[2026-11-06 11:24:00] [INFO] Master Sheet Selected: 'Product_Master'
+[2026-11-06 11:24:00] [INFO] Transactions Sheet Selected: 'Stock_Transactions'
+[2026-11-06 11:24:00] [UNKNOWN_CODE] ID 'TXN-5091': Unknown Product Code 'PRD-9999' (Not in Master Catalog)
+[2026-11-06 11:24:00] [INVALID_TRANSACTION] ID 'TXN-5093': Invalid Quantity (-10.0): Must be positive (>0)
+[2026-11-06 11:24:00] [NEGATIVE_STOCK] ID 'PRD-1005': Overdrawn balance: -5.0
+[2026-11-06 11:24:00] [INFO] Ingestion Finished: 15 Master SKUs | 21 Transactions | 11 Reorders
+[2026-11-06 11:24:06] [INFO] =================================================================
+[2026-11-06 11:24:06] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-06 11:24:06] [INFO] Target: /working_dir/c_cff08974ec734e22/StockPulse_AI/input/Input_Data.xlsx
+[2026-11-06 11:24:06] [INFO] Master Sheet Selected: 'Product_Master'
+[2026-11-06 11:24:06] [INFO] Transactions Sheet Selected: 'Stock_Transactions'
+[2026-11-06 11:24:06] [UNKNOWN_CODE] ID 'TXN-5091': Unknown Product Code 'PRD-9999' (Not in Master Catalog)
+[2026-11-06 11:24:06] [INVALID_TRANSACTION] ID 'TXN-5093': Invalid Quantity (-10.0): Must be positive (>0)
+[2026-11-06 11:24:06] [NEGATIVE_STOCK] ID 'PRD-1005': Overdrawn balance: -5.0
+[2026-11-06 11:24:06] [INFO] Ingestion Finished: 15 Master SKUs | 21 Transactions | 11 Reorders
+[2026-11-06 11:28:56] [INFO] =================================================================
+[2026-11-06 11:28:56] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-06 11:28:56] [INFO] Target: /working_dir/c_cff08974ec734e22/StockPulse_AI/input/Input_Data.xlsx
+[2026-11-06 11:28:56] [INFO] Master Sheet Selected: 'Product_Master'
+[2026-11-06 11:28:56] [INFO] Transactions Sheet Selected: 'Stock_Transactions'
+[2026-11-06 11:28:56] [UNKNOWN_CODE] ID 'TXN-5091': Unknown Product Code 'PRD-9999' (Not in Master Catalog)
+[2026-11-06 11:28:56] [INVALID_TRANSACTION] ID 'TXN-5093': Invalid Quantity (-10.0): Must be positive (>0)
+[2026-11-06 11:28:56] [NEGATIVE_STOCK] ID 'PRD-1005': Overdrawn balance: -5.0
+[2026-11-06 11:28:56] [INFO] Ingestion Finished: 15 Master SKUs | 21 Transactions | 11 Reorders
+[2026-11-06 17:07:57] [INFO] =================================================================
+[2026-11-06 17:07:57] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-06 17:07:57] [INFO] Target: C:\Users\ADMIN\Desktop\STOCK PULSE FINAL OUTPUT\StockPulse_AI\input\Input_Data.xlsx
+[2026-11-06 17:07:57] [INFO] Master Sheet Selected: 'Product_Master'
+[2026-11-06 17:07:57] [INFO] Transactions Sheet Selected: 'Stock_Transactions'
+[2026-11-06 17:07:57] [UNKNOWN_CODE] ID 'TXN-5091': Unknown Product Code 'PRD-9999' (Not in Master Catalog)
+[2026-11-06 17:07:57] [INVALID_TRANSACTION] ID 'TXN-5093': Invalid Quantity (-10.0): Must be positive (>0)
+[2026-11-06 17:07:57] [NEGATIVE_STOCK] ID 'PRD-1005': Overdrawn balance: -5.0
+[2026-11-06 17:07:57] [INFO] Ingestion Finished: 15 Master SKUs | 21 Transactions | 11 Reorders
+[2026-11-06 17:08:09] [INFO] =================================================================
+[2026-11-06 17:08:09] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-06 17:08:09] [INFO] Target: C:\Users\ADMIN\Desktop\STOCK PULSE FINAL OUTPUT\StockPulse_AI\input\Input_Data.xlsx
+[2026-11-06 17:08:09] [INFO] Master Sheet Selected: 'Product_Master'
+[2026-11-06 17:08:09] [INFO] Transactions Sheet Selected: 'Stock_Transactions'
+[2026-11-06 17:08:09] [UNKNOWN_CODE] ID 'TXN-5091': Unknown Product Code 'PRD-9999' (Not in Master Catalog)
+[2026-11-06 17:08:09] [INVALID_TRANSACTION] ID 'TXN-5093': Invalid Quantity (-10.0): Must be positive (>0)
+[2026-11-06 17:08:09] [NEGATIVE_STOCK] ID 'PRD-1005': Overdrawn balance: -5.0
+[2026-11-06 17:08:09] [INFO] Ingestion Finished: 15 Master SKUs | 21 Transactions | 11 Reorders
+[2026-11-06 17:09:00] [INFO] =================================================================
+[2026-11-06 17:09:00] [INFO] Universal StockPulse AI Pipeline Ingestion Initiated
+[2026-11-06 17:09:00] [INFO] Target: C:\Users\ADMIN\Desktop\STOCK PULSE FINAL OUTPUT\StockPulse_AI\input\Input_Data.xlsx
+[2026-11-06 17:09:00] [INFO] Master Sheet Selected: 'Product_Master'
+[2026-11-06 17:09:00] [INFO] Transactions Sheet Selected: 'Stock_Transactions'
+[2026-11-06 17:09:00] [UNKNOWN_CODE] ID 'TXN-5091': Unknown Product Code 'PRD-9999' (Not in Master Catalog)
+[2026-11-06 17:09:00] [INVALID_TRANSACTION] ID 'TXN-5093': Invalid Quantity (-10.0): Must be positive (>0)
+[2026-11-06 17:09:00] [NEGATIVE_STOCK] ID 'PRD-1005': Overdrawn balance: -5.0
+[2026-11-06 17:09:00] [INFO] Ingestion Finished: 15 Master SKUs | 21 Transactions | 11 Reorders
