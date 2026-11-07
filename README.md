@@ -2,7 +2,7 @@
 ### DefineInfoTech Pvt. Ltd. (DIT) Internship 2026
 **Project ID**: DIT-P04 | **Team ID**: Team T04  
 **College**: Anjalai Ammal Mahalingam Engineering College, Kovilvenni, Thiruvarur  
-**Live Cloud Deployment**: [https://stock-pulse-rsvn.onrender.com/](https://stock-pulse-rsvn.onrender.com/)
+**Live Cloud Deployment**: [https://stock-pulse-7ze5.onrender.com/)
 
 ---
 
