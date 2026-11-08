@@ -1,93 +1,107 @@
-# StockPulse AI — Enterprise Inventory Tracking & Anomaly Detection System
+# StockPulse AI — Enterprise Inventory Tracking & Anomaly Detection Platform
 
-**Project ID**: DIT-P04 | **Team ID**: Team T04 | **Domain**: Operations & Inventory Monitoring
 
-**Internship**: DefineInfoTech Pvt. Ltd. (DIT) Internship 2026
 
-**Institution**: Anjalai Ammal Mahalingam Engineering College (AAMEC), Kovilvenni, Thiruvarur
+> **Project ID:** DIT-P04 | **Team ID:** Team T04 | **Domain:** Operations & Inventory Monitoring
+>
+> **Internship Programme:** DefineInfoTech Pvt. Ltd. (DIT) Industrial Internship 2026
+>
+> **Institution:** Anjalai Ammal Mahalingam Engineering College (AAMEC), Kovilvenni, Thiruvarur
+>
+> **Live Production URL:** <https://stock-pulse-7ze5.onrender.com/>
+>
+> **GitHub Repository:** <https://github.com/abinaamec25-crypto/STOCK-PULSE>
 
-**Live Production URL**: <https://stock-pulse-7ze5.onrender.com/>
+## 1. Executive Summary & Problem Scope
 
-**GitHub Repository**: [https://github.com/abin-s/stockpulse-ai](https://www.google.com/search?q=https://github.com/abin-s/stockpulse-ai)
+**StockPulse AI** is an enterprise-grade automated inventory tracking, stock balance calculation, and anomaly detection platform designed and engineered by **Team T04** during the **DefineInfoTech Pvt. Ltd. (DIT) Internship 2026**.
 
-## 1. Executive Summary & Overview
+In discrete manufacturing plants, assembly facilities, and logistics distribution centers, manual spreadsheet inventory management leads to severe operational downtime and financial losses:
 
-**StockPulse AI** is an enterprise-grade automated inventory tracking, stock balance calculation, and anomaly detection platform designed and engineered by Team T04 during the DefineInfoTech Pvt. Ltd. (DIT) Internship 2026. The platform provides complete deterministic visibility across multi-warehouse supply chain operations by processing product master registers alongside real-time timestamped stock movement transaction feeds (receipts and issues).
+1. **Negative Stock Emergencies:** Spare parts are issued to shop-floor technicians without verified stock receipts, driving physical balances below zero.
 
-The platform automates dynamic balance calculations, enforces reorder safety buffers, identifies low/negative stock hazards, intercepts unauthorized SKU activity, generates audit logs, and exports formatted executive workbooks.
+2. **Unauthorized SKU Movements:** Obsolete, mistyped, or unapproved product codes (e.g., `PRD-9999`) bypass master catalog validation, corrupting ledger integrity.
+
+3. **Buffer Depletion & Assembly Line Stoppages:** Production lines halt unexpectedly when parts drop below buffer levels without proactive alerts, forcing expensive emergency rush shipments.
+
+StockPulse AI eliminates these liabilities through automated multi-tab Excel ingestion, canonical regex normalization, deterministic balance calculations, automated safety buffer deficit tracking, and OpenPyXL workbook exports.
 
 ## 2. Team T04 Allocation & Contribution Roster
 
-| S.No | Team Member | DIT Internship ID | Project Role | Primary Engineering Contribution | 
+| S.No | Team Member | DIT Internship ID | Project Role | Granular Technical Ownership | 
 | ----- | ----- | ----- | ----- | ----- | 
-| 1 | **Abin S (Team Lead)** | `DIT2026S1019` | Full-Stack & Integration Lead | System architecture, FastAPI backend (`app.py`), in-memory caching pipeline, automated ETL ingestion, and Render cloud deployment. | 
-| 2 | **V Gopiha Sri** | `DIT2026S1016` | Data Engineering & Rules | Synthetic industrial catalog curation, dynamic balance formulation, safety buffer thresholds, and deficit calculations (`src/business_rules.py`). | 
+| 1 | **Abin S (Team Lead)** | `DIT2026S1019` | Full-Stack & Integration Lead | System architecture, FastAPI REST API (`app.py`), in-memory caching pipeline, automated batch ETL ingestion, and Render cloud deployment. | 
+| 2 | **V Gopiha Sri** | `DIT2026S1016` | Data Engineering & Business Rules | Synthetic industrial catalog curation, dynamic balance formulation ($Opening + In - Out$), safety buffer thresholds, and deficit purchase calculations (`src/business_rules.py`). | 
 | 3 | **P. Dharshini** | `DIT2026S1017` | Validation & Anomaly Engine | Canonical header normalization, schema sanitization (`src/validation.py`), quarantine of invalid records, and unknown SKU interception (`PRD-9999`). | 
-| 4 | **A. Flora Emmaculate** | `DIT2026S1018` | Reporting Engine & Excel Workbooks | OpenPyXL report generation (`src/report_generator.py`), dynamic column auto-fitting, automated cell merge, and generating all 5 output workbooks. | 
-| 5 | **Heamkumar R** | `DIT2026S1020` | Analytics & QA Verification | Executive dashboard analytics, Chart.js visual data bindings, KPI summary cards, and automated unit test suite (`tests/test_inventory.py`). | 
+| 4 | **A. Flora Emmaculate** | `DIT2026S1018` | Reporting Engine & Excel Workbooks | OpenPyXL workbook architecture (`src/report_generator.py`), dynamic column width detection, cell styling, and automated generation of all 5 output workbooks. | 
+| 5 | **Heamkumar R** | `DIT2026S1020` | Analytics & QA Verification | Executive dashboard UI integration, Chart.js visual data bindings, KPI summary cards, and automated unit test suite execution (`tests/test_inventory.py`). | 
 
-## 3. Mathematical Foundations & Business Rules
+## 3. Mathematical Foundations & Business Rules Engine
 
-The calculation engine in `src/business_rules.py` executes strict deterministic mathematical logic:
+The core computation engine in `src/business_rules.py` executes deterministic mathematical logic:
 
-* **Dynamic Stock Balance Equation**:
-  
+### 3.1 Dynamic Stock Balance Equation
 
-  $$
-  \text{Current Balance} = \text{Opening Stock} + \sum \text{Stock IN (Receipts)} - \sum \text{Stock OUT (Issues)}
-  $$
+For every SKU in the verified catalog, real-time balances are computed dynamically:
 
-* **Reorder Condition**:
+$$
+\text{Current Balance} = \text{Opening Stock} + \sum \text{Stock IN (Receipts)} - \sum \text{Stock OUT (Issues)}
+$$
+
+### 3.2 Safety Buffer & Reorder Formulation
+
+* **Reorder Trigger:**
   
 
   $$
   \text{Reorder Required} = \begin{cases} \text{"YES"}, & \text{if } \text{Current Balance} < \text{Minimum Stock} \\ \text{"NO"}, & \text{otherwise} \end{cases}
   $$
 
-* **Stock Deficit (Units)**:
+* **Stock Deficit Units:**
   
 
   $$
   \text{Stock Deficit} = \max(0, \text{Minimum Stock} - \text{Current Balance})
   $$
 
-* **Estimated Purchase Order Cost (INR)**:
+* **Estimated Purchase Order Cost (INR):**
   
 
   $$
-  \text{PO Value} = \text{Recommended Reorder Qty} \times \text{Unit Price}
+  \text{PO Value} = \text{Recommended Reorder Quantity} \times \text{Unit Price}
   $$
 
-* **Current Stock Valuation (INR)**:
+* **Zero-Bound Stock Valuation (INR):**
   
 
   $$
-  \text{Stock Valuation} = \max(0, \text{Current Balance}) \times \text{Unit Price}
+  \text{Current Stock Valuation} = \max(0, \text{Current Balance}) \times \text{Unit Price}
   $$
 
-### Six-Tier Inventory Health Classification
+  
+  *(Ensures negative balances never produce distorted negative inventory assets)*
 
-1. **NEGATIVE STOCK (CRITICAL)**: $\text{Current Balance} < 0$. Overdrawn stockout; physical parts issued without system receipts. Immediate physical audit required.
+### 3.3 Six-Tier Inventory Health Classification Matrix
 
-2. **OUT OF STOCK**: $\text{Current Balance} == 0$. Complete exhaustion; assembly line halted. Emergency PO dispatch.
+| Health Status Category | Boundary Condition | Operational Interpretation & Action Required | 
+| ----- | ----- | ----- | 
+| **NEGATIVE STOCK (CRITICAL)** | $\text{Current Balance} < 0$ | Overdrawn stockout. Physical parts issued without verified receipts. Flagged for immediate physical warehouse audit. | 
+| **OUT OF STOCK** | $\text{Current Balance} == 0$ | Complete inventory exhaustion. Assembly line halted. Immediate emergency PO dispatch. | 
+| **CRITICAL BUFFER** | $0 < \text{Current Balance} \le 0.25 \times \text{Minimum}$ | Severely depleted buffer ($\le 25\%$). High stockout hazard within 24–48 operating hours. | 
+| **LOW STOCK** | $0.25 \times \text{Minimum} < \text{Balance} < \text{Minimum}$ | Sub-buffer level. Routine purchase requisition triggered to replenish buffer. | 
+| **HEALTHY** | $\text{Minimum} \le \text{Balance} \le 3.0 \times \text{Minimum}$ | Optimal operational equilibrium. Stable buffer with no procurement capital commitment needed. | 
+| **OVERSTOCKED** | $\text{Current Balance} > 3.0 \times \text{Minimum}$ | Excessive holding. Working capital tied up; potential shelf-life or obsolescence risk. | 
 
-3. **CRITICAL BUFFER**: $0 < \text{Current Balance} \le 0.25 \times \text{Minimum Stock}$. Severely depleted safety buffer ($\le 25\%$). High stockout risk within 24–48 operating hours.
-
-4. **LOW STOCK**: $0.25 \times \text{Minimum} < \text{Balance} < \text{Minimum Stock}$. Sub-buffer level. Routine purchase requisition triggered to replenish buffer.
-
-5. **HEALTHY**: $\text{Minimum Stock} \le \text{Balance} \le 3.0 \times \text{Minimum Stock}$. Optimal operational equilibrium. Stable buffer with no procurement capital commitment needed.
-
-6. **OVERSTOCKED**: $\text{Current Balance} > 3.0 \times \text{Minimum Stock}$. Excessive holding. Working capital tied up; potential shelf-life or obsolescence risk.
-
-## 4. Repository Structure
+## 4. System Architecture & Complete Codebase Layout
 
 ```
 stockpulse-ai/
 ├── app.py                      # FastAPI web server, API routing, in-memory cache
-├── requirements.txt            # Production dependencies
+├── requirements.txt            # Production dependencies (fastapi, uvicorn, openpyxl, etc.)
 ├── Dockerfile                  # Container definition for reproducible deployment
-├── render.yaml                 # Render cloud infrastructure specification
+├── render.yaml                 # Render cloud infrastructure as code specification
 ├── README.md                   # System documentation & execution guide
+├── .gitignore                  # Git ignore rules for virtualenvs, caches, logs
 ├── input/
 │   └── Input_Data.xlsx         # Master catalog, stock receipts, and stock issues
 ├── src/
@@ -114,26 +128,31 @@ stockpulse-ai/
 
 ```
 
-## 5. Installation & Execution Guide
+## 5. Step-by-Step Installation & Local Execution
 
 ### Prerequisites
 
-* Python 3.10+ installed
+* Python 3.10 or higher
 
-* Git version control
+* Git installed
 
-* Google Chrome or modern web browser
+* Modern web browser (Chrome, Edge, Firefox)
 
-### Step 1: Clone Repository & Create Virtual Environment
+### Step 1: Clone Repository
 
 ```
-git clone https://github.com/abin-s/stockpulse-ai.git
-cd stockpulse-ai
+git clone https://github.com/abinaamec25-crypto/STOCK-PULSE.git
+cd STOCK-PULSE
 
-# Create isolated virtual environment
+```
+
+### Step 2: Set Up Virtual Environment
+
+```
+# Create isolated environment
 python3 -m venv venv
 
-# Activate virtual environment
+# Activate environment
 # On Linux/macOS:
 source venv/bin/activate
 # On Windows:
@@ -141,59 +160,63 @@ venv\Scripts\activate
 
 ```
 
-### Step 2: Install Production Dependencies
+### Step 3: Install Dependencies
 
 ```
 pip install -r requirements.txt
 
 ```
 
-### Step 3: Run the Application
-
-```
-# Start FastAPI web server with Uvicorn
-uvicorn app:app --host 0.0.0.0 --port 8000 --reload
-
-```
-
-Open your browser and navigate to `http://localhost:8000` to access the interactive executive dashboard.
-
-## 6. Running Automated Unit Tests
-
-In compliance with Task 6 testing standards, execute the automated test suite:
+### Step 4: Run Automated Unit Tests
 
 ```
 python -m unittest discover tests
 
 ```
 
-### Verified Test Suite Results (0.000s execution)
+### Step 5: Start Production Server
 
-* `test_stock_balance_calculation`: Verifies dynamic formula $50 + 20 - 25 == 45.0$ units. **\[PASS\]**
+```
+uvicorn app:app --host 0.0.0.0 --port 8000 --reload
 
-* `test_reorder_condition`: Verifies reorder flag: $15 < 25 \rightarrow \text{YES}$ and $30 \ge 25 \rightarrow \text{NO}$. **\[PASS\]**
+```
 
-* `test_negative_stock_health`: Verifies health classifier assigns `NEGATIVE STOCK (CRITICAL)` for balance $< 0$. **\[PASS\]**
+Navigate to `http://localhost:8000` to access the interactive web application.
 
-* `test_unknown_product_code_rejection`: Verifies validator rejects unregistered part IDs (`PRD-9999`). **\[PASS\]**
+## 6. Testing Suite & Verification Matrix (12 Test Cases)
 
-* `test_valid_transaction`: Verifies valid movements are correctly sanitized and parsed as float quantities. **\[PASS\]**
+| Test ID | Subsystem | Input Scenario | Expected Defensive Behavior | Status | 
+| ----- | ----- | ----- | ----- | ----- | 
+| **TC-01** | Ingestion | Upload valid multi-tab Excel (`.xlsx`) | Extracts Product Master and Stock Movements | **PASS** | 
+| **TC-02** | Ingestion | Upload corrupted or non-Excel binary | Rejects payload with HTTP 400 error | **PASS** | 
+| **TC-03** | Normalizer | Fuzzy alias headers (`"SKU Code"`, `"qty"`) | Maps aliases to standard internal keys | **PASS** | 
+| **TC-04** | Math Engine | Conforming movement transactions | $Opening + Receipts - Issues == Balance$ | **PASS** | 
+| **TC-05** | Math Engine | Cumulative overdrawn movement feed | Health status flags `NEGATIVE STOCK (CRITICAL)` | **PASS** | 
+| **TC-06** | Validation | Unknown product code (`PRD-9999`) | Intercepted & quarantined to `Error_Report.xlsx` | **PASS** | 
+| **TC-07** | Validation | Negative movement quantity (`-10.0`) | Blocked from calculation pipeline | **PASS** | 
+| **TC-08** | Reorder | Balance breaches safety buffer | Generates `Reorder Required == 'YES'` | **PASS** | 
+| **TC-09** | Reorder | Buffer deficit calculation | Computes $\max(0, \text{Min} - \text{Balance})$ | **PASS** | 
+| **TC-10** | Reporting | OpenPyXL column auto-fitting | Auto-sizes columns to $(max\_len + 3)$ | **PASS** | 
+| **TC-11** | REST API | In-memory cache hit on `/api/data` | Serves cached JSON in $<5\text{ms}$ | **PASS** | 
+| **TC-12** | Cloud | Managed Render web service deployment | Binds dynamically to container `$PORT` | **PASS** | 
 
-## 7. API Endpoint Specification
+## 7. REST API Endpoints Specification
 
-| HTTP Method | Endpoint Route | Operational Purpose & Return Payload | 
+| HTTP Method | Route | Description & Return Payload | 
 | ----- | ----- | ----- | 
-| `GET` | `/` | Renders the responsive HTML5 dark-theme dashboard with Chart.js charts and official DIT corporate branding. | 
-| `GET` | `/api/data` | Returns cached JSON payload with summary KPIs, calculated inventory records, valid transactions, and anomalies. | 
-| `POST` | `/api/run-pipeline` | Forces an explicit ETL pipeline recalculation across the active input dataset, regenerating all 5 Excel workbooks. | 
-| `POST` | `/api/upload-excel` | Accepts multipart Excel upload (`.xlsx`), updates `input/Input_Data.xlsx`, and triggers automated pipeline ingestion. | 
-| `GET` | `/api/download/{report}` | Directly streams generated Excel files (`Stock_Report`, `Reorder_List`, `Error_Report`, etc.) as download attachments. | 
-| `GET` | `/api/quick-action/{type}` | Generates dynamic vendor purchase order emails (`po_email`) or operations risk briefing assessments. | 
+| `GET` | `/` | Renders HTML5 responsive executive dashboard with Chart.js bindings. | 
+| `GET` | `/api/data` | Returns cached JSON containing summary KPIs, catalog records, and anomalies. | 
+| `POST` | `/api/run-pipeline` | Executes end-to-end ETL calculation and regenerates all 5 Excel workbooks. | 
+| `POST` | `/api/upload-excel` | Multipart upload for new Excel datasets, updating `input/Input_Data.xlsx`. | 
+| `GET` | `/api/download/{report}` | Streams generated report workbooks (`Stock_Report`, `Reorder_List`, etc.). | 
+| `GET` | `/api/quick-action/{type}` | Generates dynamic vendor PO emails (`po_email`) or operational risk briefs. | 
 
 ## 8. Sponsoring Enterprise & Certification
 
-* **Sponsoring Enterprise**: DefineInfoTech Pvt. Ltd. (DIT), Coimbatore, Tamil Nadu, India
+* **Sponsoring Enterprise:** DefineInfoTech Pvt. Ltd. (DIT), Coimbatore, Tamil Nadu, India
 
-* **Tagline**: *We Define Intellect | People • Technology • Impact*
+* **Executive Leadership:** Mr. Selvaraj Kishok Kumar, Chief Executive Officer (CEO)
 
-* **Submission Status**: Fully Verified, Tested, and Deployed for Project Review (Task 10).
+* **Academic Partner:** Anjalai Ammal Mahalingam Engineering College (AAMEC), Kovilvenni, Thiruvarur
+
+* **Certification Status:** Production Verified & Tested for Phase 1 Technical Review (Task 10).
