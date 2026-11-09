@@ -78,7 +78,7 @@ The calculation and classification functions are implemented in **src/business_r
 
 For each product:
 
-$$
+```math
 \text{Current Balance}
 =
 \text{Opening Stock}
@@ -86,7 +86,7 @@ $$
 \text{Total Stock IN}
 -
 \text{Total Stock OUT}
-$$
+```
 
 - **Opening Stock:** starting quantity.
 - **Stock IN:** total quantity received.
@@ -97,21 +97,21 @@ $$
 
 A reorder is required when the current balance is below the minimum stock level.
 
-$$
+```math
 \text{Reorder Required} =
 \begin{cases}
 \text{YES}, & \text{Current Balance} < \text{Minimum Stock}\\
 \text{NO}, & \text{otherwise}
 \end{cases}
-$$
+```
 
 ### 4.3 Stock deficit
 
-$$
+```math
 \text{Stock Deficit}
 =
 \max(0,\text{Minimum Stock}-\text{Current Balance})
-$$
+```
 
 ### 4.4 Recommended order quantity
 
@@ -119,23 +119,23 @@ When a reorder is required, the system uses the product's configured reorder qua
 
 ### 4.5 Estimated purchase order value
 
-$$
+```math
 \text{Estimated PO Cost}
 =
 \text{Recommended Order Quantity}
 \times
 \text{Unit Price}
-$$
+```
 
 ### 4.6 Current stock valuation
 
-$$
+```math
 \text{Stock Valuation}
 =
 \max(0,\text{Current Balance})
 \times
 \text{Unit Price}
-$$
+```
 
 Negative balances therefore do not create negative inventory asset valuations.
 
@@ -175,9 +175,9 @@ For an item with:
 - Stock IN = 40 units
 - Stock OUT = 55 units
 
-$$
+```math
 100 + 40 - 55 = 85\text{ units}
-$$
+```
 
 The calculated current balance is **85 units**.
 
@@ -434,9 +434,9 @@ StockPulse AI brings inventory data ingestion, validation, stock balance computa
 
 Its central business rule is:
 
-$$
+```math
 \boxed{\text{Closing Stock}=\text{Opening Stock}+\text{Stock IN}-\text{Stock OUT}}
-$$
+```
 
 By turning stock movement records into calculated balances and actionable reports, the project helps make inventory monitoring more consistent, traceable, and accessible.
 
